@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import { defineConfig } from "eslint/config";
 import importPlugin from 'eslint-plugin-import';
 import perfectionist from 'eslint-plugin-perfectionist';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
@@ -9,7 +10,7 @@ import unusedImports from 'eslint-plugin-unused-imports';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-export default tseslint.config(
+export default defineConfig([
   {
     ignores: [
       '*.config.*',
@@ -132,4 +133,4 @@ export default tseslint.config(
     },
   },
   eslintPluginPrettierRecommended
-);
+]);
